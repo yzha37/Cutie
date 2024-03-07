@@ -230,21 +230,21 @@ def check_to_clear_non_permanent_cuda_memory(processor: InferenceCore, device, m
 
 def get_arguments():
     parser = ArgumentParser()
-    parser.add_argument('-v', '--video', help='Video file.', default=None)
+    parser.add_argument('-v', '--video', help='Video file.', default='examples/a_talking_robot.mp4')
     parser.add_argument(
         '-m',
         '--mask_dir',
         help=
         'Directory with mask files. Must be named with with corresponding video frame number syntax [07d].',
-        default=None)
+        default='examples/mask')
     parser.add_argument('-o',
                         '--output_dir',
                         help='Directory where processed mask files will be saved.',
-                        default=None)
+                        default='output')
     parser.add_argument('-d',
                         '--device',
                         help='Target device for processing [cuda, cpu].',
-                        default='cuda')
+                        default='cpu')
     parser.add_argument(
         '--mem_every',
         help='How often to update working memory; higher number speeds up processing.',
